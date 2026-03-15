@@ -177,6 +177,7 @@ Type `/yes` in any conversation.
 
 ## Pair With
 
+- **5x-cto** ([`sstklen/5x-cto`](https://github.com/sstklen/5x-cto)) — Full dev pipeline (requirements → spec → cards → build → review). YES.md governs, 5x-cto orchestrates. Together = safe + structured end-to-end.
 - **PUA** (`tanweai/pua`) — PUA adds persistence pressure, YES.md adds accuracy structure
 - **systematic-debugging** — Method-level debugging, YES.md adds governance layer
 

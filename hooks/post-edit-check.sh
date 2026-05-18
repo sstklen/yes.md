@@ -5,6 +5,8 @@
 
 FILE="$1"
 
+[ -z "$1" ] && exit 0
+
 # 跳過非程式碼檔案
 case "$FILE" in
   *.md|*.txt|*.log|*.json.bak*|*.bak*) exit 0 ;;

@@ -5,6 +5,8 @@
 
 CMD="$1"
 
+[ -z "$1" ] && exit 0
+
 # 危險指令清單
 DANGERS=(
   "rm -rf /"

@@ -5,6 +5,8 @@
 
 CMD="$1"
 
+[ -z "$1" ] && exit 0
+
 # 偵測部署相關指令
 if echo "$CMD" | grep -qiE "(docker compose up|docker-compose up|deploy|push.*production|push.*main)"; then
   echo "═══════════════════════════════════════════"

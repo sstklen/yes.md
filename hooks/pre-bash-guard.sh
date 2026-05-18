@@ -23,8 +23,9 @@ DANGERS=(
   ":(){:|:&};:"
 )
 
+shopt -s nocasematch
 for DANGER in "${DANGERS[@]}"; do
-  if echo "$CMD" | grep -qiF "$DANGER"; then
+  if [[ "$CMD" == *"$DANGER"* ]]; then
     echo "═══════════════════════════════════════════"
     echo "🚨 YES.md BLOCKED — dangerous command detected"
     echo "═══════════════════════════════════════════"
@@ -34,8 +35,10 @@ for DANGER in "${DANGERS[@]}"; do
     echo "  This command can cause irreversible damage."
     echo "  If you really need this, ask the user first."
     echo "═══════════════════════════════════════════"
+    shopt -u nocasematch
     exit 1
   fi
 done
+shopt -u nocasematch
 
 exit 0

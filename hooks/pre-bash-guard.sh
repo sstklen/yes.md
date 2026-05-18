@@ -24,7 +24,7 @@ DANGERS=(
 )
 
 for DANGER in "${DANGERS[@]}"; do
-  if echo "$CMD" | grep -qiF "$DANGER"; then
+  if printf '%s\n' "$CMD" | grep -qiF "$DANGER"; then
     echo "═══════════════════════════════════════════"
     echo "🚨 YES.md BLOCKED — dangerous command detected"
     echo "═══════════════════════════════════════════"

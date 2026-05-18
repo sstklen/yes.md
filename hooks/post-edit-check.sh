@@ -3,7 +3,7 @@
 # 觸發時機：AI 用 Write/Edit 修改檔案後
 # 作用：提醒 AI 跑 ripple-check，不靠自律靠機器
 
-FILE="$1"
+FILE="${1:-$TOOL_INPUT}"
 
 # 跳過非程式碼檔案
 case "$FILE" in

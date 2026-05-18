@@ -3,6 +3,8 @@
 # 觸發時機：AI 執行含 deploy/docker 的指令後
 # 作用：部署後自動提醒跑 health check
 
+[ -z "$1" ] && exit 0
+
 CMD="$1"
 
 # 偵測部署相關指令

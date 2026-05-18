@@ -3,7 +3,7 @@
 # 觸發時機：AI 執行含 deploy/docker 的指令後
 # 作用：部署後自動提醒跑 health check
 
-CMD="$1"
+CMD="${1:-$TOOL_INPUT}"
 
 # 偵測部署相關指令
 if echo "$CMD" | grep -qiE "(docker compose up|docker-compose up|deploy|push.*production|push.*main)"; then

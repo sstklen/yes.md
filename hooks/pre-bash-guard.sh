@@ -4,6 +4,7 @@
 # 作用：攔截危險操作，不靠 AI 自律靠腳本擋
 
 CMD="$1"
+SEP="═══════════════════════════════════════════"
 
 # 危險指令清單
 DANGERS=(
@@ -25,15 +26,15 @@ DANGERS=(
 
 for DANGER in "${DANGERS[@]}"; do
   if echo "$CMD" | grep -qiF "$DANGER"; then
-    echo "═══════════════════════════════════════════"
+    echo "$SEP"
     echo "🚨 YES.md BLOCKED — dangerous command detected"
-    echo "═══════════════════════════════════════════"
+    echo "$SEP"
     echo "  Command: $CMD"
     echo "  Matched: $DANGER"
     echo ""
     echo "  This command can cause irreversible damage."
     echo "  If you really need this, ask the user first."
-    echo "═══════════════════════════════════════════"
+    echo "$SEP"
     exit 1
   fi
 done

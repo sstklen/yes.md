@@ -4,18 +4,19 @@
 # 作用：提醒 AI 跑 ripple-check，不靠自律靠機器
 
 FILE="$1"
+SEP="═══════════════════════════════════════════"
 
 # 跳過非程式碼檔案
 case "$FILE" in
   *.md|*.txt|*.log|*.json.bak*|*.bak*) exit 0 ;;
 esac
 
-echo "═══════════════════════════════════════════"
+echo "$SEP"
 echo "🔔 YES.md Ripple Check — you edited: $FILE"
-echo "═══════════════════════════════════════════"
+echo "$SEP"
 echo "Before reporting 'done', verify:"
 echo "  □ Same pattern elsewhere?  (grep for similar code)"
 echo "  □ Upstream/downstream ok?  (grep who uses this)"
 echo "  □ Edge cases covered?      (null, long input, concurrency)"
 echo "  □ Actually tested?         (curl / run / execute)"
-echo "═══════════════════════════════════════════"
+echo "$SEP"
